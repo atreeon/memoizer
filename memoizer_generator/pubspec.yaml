@@ -1,6 +1,6 @@
 name: memoizer_generator
 description: Creates a separate version of a function and extending memoize
-version: 1.0.0-nullsafety
+version: 1.0.0-nullsafety3
 homepage: https://github.com/atreeon/memoizer
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
   build: ^1.2.2
   source_gen: ^0.9.4+7
   dartx: ^0.5.0
-  memoizer_annotation: 1.0.0-nullsafety2
+  memoizer_annotation: 1.0.0-nullsafety4
   analyzer: '>=0.40.0 <0.42.0'
 
 dev_dependencies:

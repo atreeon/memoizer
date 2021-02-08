@@ -1,4 +1,3 @@
-import 'package:memoizer_annotation/Memo0.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 

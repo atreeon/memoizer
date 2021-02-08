@@ -9,7 +9,7 @@ builders:
     target: ":memoizer_generator"
     import: "package:memoizer_generator/memoizer_generator.dart"
     builder_factories: ["memoizerBuilder"]
-    build_extensions: {".dart": [".x.g.part"]}
+    build_extensions: {".dart": [".x.part"]}
     auto_apply: dependents
     build_to: cache
     applies_builders: ["source_gen|combining_builder"]

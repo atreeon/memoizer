@@ -1,4 +1,4 @@
-import 'package:memoizer_annotation/memoizerClasses.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:memoizer_generator/src/helpers.dart';
 import 'package:memoizer_generator/src/types.dart';
 import 'package:test/test.dart';

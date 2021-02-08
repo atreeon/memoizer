@@ -1,3 +1,9 @@
+export 'src/Memo0.dart';
+export 'src/Memo1.dart';
+export 'src/Memo2.dart';
+export 'src/Memo3.dart';
+export 'src/memoizerClasses.dart';
+
 /// Creates a new function with memoize functionality
 ///
 /// 1. If a parameter should be ignored when comparing the results

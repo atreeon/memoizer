@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:memoizer_annotation/memoizerClasses.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 
 ///Provides an extendable class that implements memoizable results
 abstract class Memo1<TOut, TIn1> {

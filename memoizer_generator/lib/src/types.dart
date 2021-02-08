@@ -1,4 +1,4 @@
-import 'package:memoizer_annotation/memoizerClasses.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 
 class NameType {
   final String type;

@@ -1,4 +1,4 @@
-import 'package:memoizer_annotation/listEquals.dart';
+import 'package:memoizer_annotation/src/listEquals.dart';
 
 ///The container to hold the result of the function
 /// Future: add a timestamp here

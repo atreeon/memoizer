@@ -1,25 +1,28 @@
 import 'package:memoizer_annotation/memoizer_annotation.dart';
+import 'package:mock_creator_annotation/mock_creator_annotation.dart';
 import 'package:test/test.dart';
 
-//POSITIONAL AND NAMED PARAMETERS
-part 'memoizer5_test.g.dart';
+part 'memoizer10_test.g.dart';
+//ADDITIONAL BUILDER
 
 var count = 0;
 
 @memoizer
-class Fn {
+@MockCreator()
+class Fn10 {
   int? call(
-    List<int> ages, {
+    @noVaryBy int age, {
     required String name,
+    double? cash,
   }) {
     count++;
 
-    return ages.length + name.length;
+    return age + name.length;
   }
 }
 
 class MemoSing {
-  var $fn1 = Memo_Fn();
+  var $fn1 = Memo_Fn10();
 
   //boilerplate
   static final MemoSing _singleton = MemoSing._internal();
@@ -37,19 +40,11 @@ void main() {
 
   group("memo1", () {
     test("1a ", () {
-      var sut = MemoSing().$fn1;
+      var sing = MemoSing();
+      var sut = sing.$fn1;
 
-      var result1 = sut([1, 2, 3], name: "bob");
-      expect(count, 1);
-      expect(result1, 6);
-
-      var result2 = sut([1, 2, 3], name: "bob");
-      expect(count, 1);
-      expect(result2, 6);
-
-      var result3 = sut([1], name: "bob");
-      expect(count, 2);
-      expect(result3, 4);
+      var result1 = sut(2, name: "bob");
+      expect(result1, 5);
     });
   });
 }
