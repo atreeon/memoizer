@@ -1,5 +1,4 @@
-import 'package:memoizer_annotation/Memo2.dart';
-import 'package:memoizer_annotation/memoizerClasses.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
 //POSITIONAL AND NAMED PARAMETERS

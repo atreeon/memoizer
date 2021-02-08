@@ -1,16 +1,14 @@
-import 'package:memoizer_annotation/Memo2.dart';
-import 'package:memoizer_annotation/memoizerClasses.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer4_test.g.dart';
+import 'memoizer4_test.memo.dart';
 
 //MEMO WITH TWO PARAMETERS
 
 var count = 0;
 
 @memoizer
-class Fn {
+class Fn4 {
   int? call(List<int> ages, String name) {
     count++;
 
@@ -19,7 +17,7 @@ class Fn {
 }
 
 class MemoSing {
-  var $fn1 = Memo_Fn();
+  var $fn1 = Memo_Fn4();
 
   //boilerplate
   static final MemoSing _singleton = MemoSing._internal();

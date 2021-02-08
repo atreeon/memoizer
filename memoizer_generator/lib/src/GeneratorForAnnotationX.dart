@@ -43,6 +43,8 @@ abstract class GeneratorForAnnotationX<T> extends Generator {
         .whereType<ClassElement>()
         .toList();
 
+    values.add("import '${library.element.source.shortName}';\n\n");
+
     for (var annotatedElement in library.annotatedWith(typeChecker)) {
       final generatedValue = generateForAnnotatedElement(
         annotatedElement.element,

@@ -1,3 +1,10 @@
+export 'package:memoizer_annotation/src/Memo0.dart';
+export 'package:memoizer_annotation/src/Memo1.dart';
+export 'package:memoizer_annotation/src/Memo2.dart';
+export 'package:memoizer_annotation/src/Memo3.dart';
+export 'package:memoizer_annotation/src/memoizerClasses.dart';
+//export 'package:memoizer_annotation/src/memoizer_annotation.dart';
+
 /// Creates a new function with memoize functionality
 ///
 /// 1. If a parameter should be ignored when comparing the results

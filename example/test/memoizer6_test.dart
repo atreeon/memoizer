@@ -1,14 +1,12 @@
-import 'package:memoizer_annotation/Memo2.dart';
-import 'package:memoizer_annotation/memoizerClasses.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer6_test.g.dart';
+import 'memoizer6_test.memo.dart';
 
 var count = 0;
 
 @memoizer
-class Fn {
+class Fn6 {
   int? call(
     int age, {
     required String name,
@@ -20,7 +18,7 @@ class Fn {
 }
 
 class MemoSing {
-  var $fn1 = Memo_Fn();
+  var $fn1 = Memo_Fn6();
 
   //boilerplate
   static final MemoSing _singleton = MemoSing._internal();

@@ -1,15 +1,14 @@
-import 'package:memoizer_annotation/Memo3.dart';
-import 'package:memoizer_annotation/memoizerClasses.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer8_test.g.dart';
+import 'memoizer8_test.memo.dart';
+
 //INVALIDATE CACHE BY PARAM
 
 var count = 0;
 
 @memoizer
-class Fn {
+class Fn8 {
   int? call(
     @noVaryBy int age, {
     required String name,
@@ -22,7 +21,7 @@ class Fn {
 }
 
 class MemoSing {
-  var $fn1 = Memo_Fn();
+  var $fn1 = Memo_Fn8();
 
   //boilerplate
   static final MemoSing _singleton = MemoSing._internal();
@@ -51,7 +50,7 @@ void main() {
 
       //The result should have been 3 but we cached it because
       //  the first parameter was ignored
-      var result3 = Fn().call(10, name: "bob");
+      var result3 = Fn8().call(10, name: "bob");
       expect(result3, 13);
     });
   });

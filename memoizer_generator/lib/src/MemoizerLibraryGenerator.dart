@@ -1,15 +1,17 @@
+//Not really sure how LibraryGenerators work but they don't produce a part file
+//  and can include import statements
+
 import 'dart:async';
 
 import 'package:analyzer/dart/element/element.dart';
-import 'package:build/src/builder/build_step.dart';
+import 'package:build/build.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
+import 'package:memoizer_generator/src/GeneratorForAnnotationX.dart';
 import 'package:memoizer_generator/src/createMemoizer.dart';
 import 'package:memoizer_generator/src/types.dart';
 import 'package:source_gen/source_gen.dart';
 
-import 'GeneratorForAnnotationX.dart';
-
-class MemoizerGenerator extends GeneratorForAnnotationX<Memoizer> {
+class MemoizerLibraryGenerator extends GeneratorForAnnotationX<Memoizer> {
   FutureOr<String> generateForAnnotatedElement(
     Element element,
     ConstantReader annotation,
@@ -40,6 +42,8 @@ class MemoizerGenerator extends GeneratorForAnnotationX<Memoizer> {
                 memoizeOn: x.metadata.any((e) => e.element.name == "noVaryBy") ? MemoizeOn.storeOnly : MemoizeOn.varyByParam,
               ))
           .toList();
+
+//      sb.writeln("import '${element.source.shortName}';");
 
       sb.writeln(createMemoizer(
         className: className,

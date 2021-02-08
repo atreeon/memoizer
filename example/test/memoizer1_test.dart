@@ -1,9 +1,7 @@
-import 'package:memoizer_annotation/memoizerClasses.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
-import 'package:memoizer_annotation/Memo1.dart';
 import 'package:test/test.dart';
 
-part 'memoizer1_test.g.dart';
+import 'memoizer1_test.memo.dart';
 
 //NOT VARYBYPARAM
 

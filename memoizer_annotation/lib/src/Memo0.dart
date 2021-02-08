@@ -1,4 +1,4 @@
-import 'package:memoizer_annotation/memoizerClasses.dart';
+import 'package:memoizer_annotation/src/memoizerClasses.dart';
 
 ///Provides an extendable class that implements memoizable results
 abstract class Memo0<TOut> {

@@ -1,8 +1,7 @@
-import 'package:memoizer_annotation/Memo0.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer0_test.g.dart';
+import 'memoizer0_test.memo.dart';
 
 //BASIC EXAMPLE THAT COUNT ONLY GETS INCREMENTED ON DIFFERENT CALLS OR AFTER
 // INVALIDATECACHE HAS BEEN CALLED

@@ -1,16 +1,14 @@
-import 'package:memoizer_annotation/Memo1.dart';
-import 'package:memoizer_annotation/memoizerClasses.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-//VARY BY PARAMS && LIST EQUALITY
+import 'memoizer2_test.memo.dart';
 
-part 'memoizer2_test.g.dart';
+//VARY BY PARAMS && LIST EQUALITY
 
 var count = 0;
 
 @memoizer
-class PlusParams1 {
+class PlusParams2 {
   int call(List<int> firstParam) {
     count++;
     return firstParam.length;
@@ -26,7 +24,7 @@ class Fn2 {
 }
 
 class MemoSing {
-  var $fn1 = Memo_PlusParams1();
+  var $fn1 = Memo_PlusParams2();
   var $fn2 = Memo_Fn2();
 
   //boilerplate
