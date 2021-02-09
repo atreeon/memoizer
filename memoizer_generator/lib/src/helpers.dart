@@ -1,4 +1,4 @@
-import 'package:dartx/dartx.dart';
+import 'package:dartx_nullsafety/dartx.dart';
 import 'package:memoizer_generator/src/types.dart';
 import 'package:meta/meta.dart';
 
