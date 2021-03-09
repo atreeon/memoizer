@@ -2,7 +2,7 @@ import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
 //POSITIONAL AND NAMED PARAMETERS
-part 'memoizer5_test.g.dart';
+part 'memoizer5_test.memoizer.dart';
 
 var count = 0;
 

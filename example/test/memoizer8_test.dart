@@ -1,7 +1,7 @@
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer8_test.g.dart';
+part 'memoizer8_test.memoizer.dart';
 //INVALIDATE CACHE BY PARAM
 
 var count = 0;

@@ -1,7 +1,7 @@
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer4_test.g.dart';
+part 'memoizer4_test.memoizer.dart';
 
 //MEMO WITH TWO PARAMETERS
 

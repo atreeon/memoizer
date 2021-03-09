@@ -15,4 +15,4 @@ dev_dependencies:
   memoizer_generator:
     path: ../memoizer_generator
   pedantic: ^1.9.0
-  mock_creator_generator: ^1.0.14-nullsafety
+  mock_creator_generator: ^1.0.14-nullsafety2

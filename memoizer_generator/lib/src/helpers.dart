@@ -1,11 +1,11 @@
-import 'package:dartx_nullsafety/dartx.dart';
-import 'package:memoizer_generator/src/types.dart';
-import 'package:meta/meta.dart';
+import 'package:dartx/dartx.dart';
+import 'package:generator_common/classes.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 
 String classDefinition({
-  @required String classNameMemoed,
-  @required String returnType,
-  @required List<NameType> paramsAll,
+  required String classNameMemoed,
+  required String returnType,
+  required List<NameType> paramsAll,
 }) {
   var typeParams = [
     returnType,
@@ -14,12 +14,12 @@ String classDefinition({
   return "class ${classNameMemoed} extends Memo${paramsAll.length}<$typeParams> {";
 }
 
-String classNameMemoed({@required String className}) => //
+String classNameMemoed({required String className}) => //
     "Memo_${className}";
 
-List<NameType> getAllParams({
-  @required List<NameType> paramsPositional,
-  @required List<NameType> paramsNamed,
+List<NameTypeWithComment<MemoizeOn>> getAllParams({
+  required List<NameTypeWithComment<MemoizeOn>> paramsPositional,
+  required List<NameTypeWithComment<MemoizeOn>> paramsNamed,
 }) =>
     [
       ...paramsPositional,
@@ -27,9 +27,9 @@ List<NameType> getAllParams({
     ];
 
 String superMemoizedFunction({
-  @required String className,
-  @required List<NameType> paramsPositional,
-  @required List<NameType> paramsNamed,
+  required String className,
+  required List<NameTypeWithComment<MemoizeOn>> paramsPositional,
+  required List<NameTypeWithComment<MemoizeOn>> paramsNamed,
 }) {
   var allParamsList = getAllParams(paramsPositional: paramsPositional, paramsNamed: paramsNamed);
   var paramList = allParamsList.map((e) => "${e.type} ${e.name}").join(", ");
@@ -42,16 +42,16 @@ String superMemoizedFunction({
 }
 
 String superMemoizeOnPX({
-  @required List<NameType> paramsAll,
+  required List<NameTypeWithComment<MemoizeOn>> paramsAll,
 }) => //
     paramsAll //
-        .mapIndexed((index, e) => "memoizeOnP${index + 1}: ${e.memoizeOn.toString()}")
+        .mapIndexed((index, e) => "memoizeOnP${index + 1}: ${e.meta1.toString()}")
         .join(",\n");
 
 String fnConstructor({
-  @required String returnType,
-  @required List<NameType> paramsPositional,
-  @required List<NameType> paramsNamed,
+  required String returnType,
+  required List<NameType> paramsPositional,
+  required List<NameType> paramsNamed,
 }) {
   var positional = paramsPositional.map((e) => //
       "${e.type} ${e.name}").join(", ");
@@ -69,14 +69,14 @@ String fnConstructor({
 }
 
 String callBody({
-  @required List<NameType> paramsAll,
+  required List<NameType> paramsAll,
 }) {
   var paramNames = paramsAll.map((e) => e.name).join(", ");
   return "return super.callInternal(${paramNames});";
 }
 
 String invalidateCacheByParamConstructor({
-  @required List<NameType> paramsAll,
+  required List<NameType> paramsAll,
 }) {
   var paramList = //
       paramsAll
@@ -91,7 +91,7 @@ String invalidateCacheByParamConstructor({
 }
 
 String invalidateCacheByParamCall({
-  @required List<NameType> paramsAll,
+  required List<NameType> paramsAll,
 }) {
   var params = paramsAll //
       .mapIndexed((index, e) => "p${index + 1}: ${e.name}")

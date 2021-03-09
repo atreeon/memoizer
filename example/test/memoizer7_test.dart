@@ -1,7 +1,7 @@
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer7_test.g.dart';
+part 'memoizer7_test.memoizer.dart';
 //THREE PARAM FUNCTION
 
 var count = 0;

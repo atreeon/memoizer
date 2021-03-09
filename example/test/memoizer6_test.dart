@@ -1,7 +1,7 @@
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer6_test.g.dart';
+part 'memoizer6_test.memoizer.dart';
 
 var count = 0;
 

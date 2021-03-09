@@ -1,6 +1,6 @@
+import 'package:generator_common/classes.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:memoizer_generator/src/helpers.dart';
-import 'package:memoizer_generator/src/types.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -20,9 +20,9 @@ void main() {
         classNameMemoed: "Memo_Another",
         returnType: "String",
         paramsAll: [
-          NameType("age", "int"),
-          NameType("name", "String"),
-          NameType("value", "double"),
+          NameTypeWithComment<MemoizeOn>("age", "int"),
+          NameTypeWithComment<MemoizeOn>("name", "String"),
+          NameTypeWithComment<MemoizeOn>("value", "double"),
         ],
       );
 
@@ -35,10 +35,10 @@ void main() {
       var result = superMemoizedFunction(
         className: "getAgeFn",
         paramsPositional: [
-          NameType("age", "int"),
+          NameTypeWithComment<MemoizeOn>("age", "int"),
         ],
         paramsNamed: [
-          NameType("money", "double"),
+          NameTypeWithComment<MemoizeOn>("money", "double"),
         ],
       );
 
@@ -49,8 +49,8 @@ void main() {
       var result = superMemoizedFunction(
         className: "getAgeFn",
         paramsPositional: [
-          NameType("age", "int"),
-          NameType("cash", "double"),
+          NameTypeWithComment<MemoizeOn>("age", "int"),
+          NameTypeWithComment<MemoizeOn>("cash", "double"),
         ],
         paramsNamed: [],
       );
@@ -62,7 +62,7 @@ void main() {
       var result = superMemoizedFunction(
         className: "getAgeFn",
         paramsPositional: [
-          NameType("ids", "List<int>?"),
+          NameTypeWithComment<MemoizeOn>("ids", "List<int>?"),
         ],
         paramsNamed: [],
       );
@@ -85,7 +85,7 @@ void main() {
     test("1 c", () {
       var result = superMemoizeOnPX(
         paramsAll: [
-          NameType("age", "int"),
+          NameTypeWithComment<MemoizeOn>("age", "int"),
         ],
       );
 
@@ -95,8 +95,8 @@ void main() {
     test("2 c", () {
       var result = superMemoizeOnPX(
         paramsAll: [
-          NameType("age", "int"),
-          NameType("ids", "List<String?>?", memoizeOn: MemoizeOn.storeOnly),
+          NameTypeWithComment<MemoizeOn>("age", "int"),
+          NameTypeWithComment<MemoizeOn>("ids", "List<String?>?", meta1: MemoizeOn.storeOnly),
         ],
       );
 

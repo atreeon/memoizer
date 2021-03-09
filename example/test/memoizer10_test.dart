@@ -2,7 +2,8 @@ import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:mock_creator_annotation/mock_creator_annotation.dart';
 import 'package:test/test.dart';
 
-part 'memoizer10_test.g.dart';
+part 'memoizer10_test.mock.dart';
+part 'memoizer10_test.memoizer.dart';
 //ADDITIONAL BUILDER
 
 var count = 0;

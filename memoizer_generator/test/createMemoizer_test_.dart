@@ -1,5 +1,6 @@
+import 'package:generator_common/classes.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:memoizer_generator/src/createMemoizer.dart';
-import 'package:memoizer_generator/src/types.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -8,10 +9,10 @@ void main() {
       var className = "Fn";
       var returnType = "int?";
       var paramsPositional = [
-        NameType("age", "int"),
+        NameTypeWithComment<MemoizeOn>("age", "int"),
       ];
       var paramsNamed = [
-        NameType("name", "String"),
+        NameTypeWithComment<MemoizeOn>("name", "String"),
       ];
 
       var output = createMemoizer(

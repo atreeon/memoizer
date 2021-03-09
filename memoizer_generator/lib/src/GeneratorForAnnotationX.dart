@@ -5,8 +5,11 @@
 import 'dart:async';
 
 import 'package:analyzer/dart/element/element.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:build/build.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:source_gen/source_gen.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:source_gen/src/output_helpers.dart';
 
 /// Extend this type to create a [Generator] that invokes
@@ -51,7 +54,7 @@ abstract class GeneratorForAnnotationX<T> extends Generator {
         classElements,
       );
       await for (var value in normalizeGeneratorOutput(generatedValue)) {
-        assert(value == null || (value.length == value.trim().length));
+        assert(value.length == value.trim().length);
         values.add(value);
       }
     }

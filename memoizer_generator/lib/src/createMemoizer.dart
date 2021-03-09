@@ -1,12 +1,12 @@
+import 'package:generator_common/classes.dart';
+import 'package:memoizer_annotation/memoizer_annotation.dart';
 import 'package:memoizer_generator/src/helpers.dart';
-import 'package:memoizer_generator/src/types.dart';
-import 'package:meta/meta.dart';
 
 String createMemoizer({
-  @required String className,
-  @required String returnType,
-  @required List<NameType> paramsPositional,
-  @required List<NameType> paramsNamed,
+  required String className,
+  required String returnType,
+  required List<NameTypeWithComment<MemoizeOn>> paramsPositional,
+  required List<NameTypeWithComment<MemoizeOn>> paramsNamed,
 }) {
   var sb = StringBuffer();
 

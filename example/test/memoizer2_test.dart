@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 //VARY BY PARAMS && LIST EQUALITY
 
-part 'memoizer2_test.g.dart';
+part 'memoizer2_test.memoizer.dart';
 
 var count = 0;
 
