@@ -1,5 +1,5 @@
 import 'package:dartx/dartx.dart';
-import 'package:generator_common/classes.dart';
+import 'package:generator_common/NameType.dart';
 import 'package:memoizer_annotation/memoizer_annotation.dart';
 
 String classDefinition({
@@ -17,9 +17,9 @@ String classDefinition({
 String classNameMemoed({required String className}) => //
     "Memo_${className}";
 
-List<NameTypeWithComment<MemoizeOn>> getAllParams({
-  required List<NameTypeWithComment<MemoizeOn>> paramsPositional,
-  required List<NameTypeWithComment<MemoizeOn>> paramsNamed,
+List<NameTypeClassCommentData<MemoizeOn>> getAllParams({
+  required List<NameTypeClassCommentData<MemoizeOn>> paramsPositional,
+  required List<NameTypeClassCommentData<MemoizeOn>> paramsNamed,
 }) =>
     [
       ...paramsPositional,
@@ -28,8 +28,8 @@ List<NameTypeWithComment<MemoizeOn>> getAllParams({
 
 String superMemoizedFunction({
   required String className,
-  required List<NameTypeWithComment<MemoizeOn>> paramsPositional,
-  required List<NameTypeWithComment<MemoizeOn>> paramsNamed,
+  required List<NameTypeClassCommentData<MemoizeOn>> paramsPositional,
+  required List<NameTypeClassCommentData<MemoizeOn>> paramsNamed,
 }) {
   var allParamsList = getAllParams(paramsPositional: paramsPositional, paramsNamed: paramsNamed);
   var paramList = allParamsList.map((e) => "${e.type} ${e.name}").join(", ");
@@ -42,7 +42,7 @@ String superMemoizedFunction({
 }
 
 String superMemoizeOnPX({
-  required List<NameTypeWithComment<MemoizeOn>> paramsAll,
+  required List<NameTypeClassCommentData<MemoizeOn>> paramsAll,
 }) => //
     paramsAll //
         .mapIndexed((index, e) => "memoizeOnP${index + 1}: ${e.meta1.toString()}")
@@ -60,7 +60,7 @@ String fnConstructor({
     positional = "${positional}, ";
 
   var named = paramsNamed.map((e) => //
-      "${e.type.contains("?") ? "" : "required "}${e.type} ${e.name}").join(", ");
+      "${e.type!.contains("?") ? "" : "required "}${e.type} ${e.name}").join(", ");
 
   if (named.length > 0) //
     named = "{${named}, }";
@@ -81,7 +81,7 @@ String invalidateCacheByParamConstructor({
   var paramList = //
       paramsAll
           .map((e) => //
-              "${e.type}${!e.type.contains("?") ? "?" : ""} ${e.name}") //
+              "${e.type}${!e.type!.contains("?") ? "?" : ""} ${e.name}") //
           .join(", ");
 
   if (paramList.length > 0) //

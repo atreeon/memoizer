@@ -1,6 +1,7 @@
 name: memoizer_annotation
 description: Creates a memoizable class from an existing class
 version: 1.0.0-nullsafety4
+publish_to: none
 
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
